@@ -12,19 +12,37 @@ class PhotoViewer extends React.Component {
     this.state = {
       currentPhotoNumber: 1
     };
+  }
 
-    this.shiftPhotos = this.shiftPhotos.bind(this);
+  componentDidUpdate(prevProps) {
+    if (this.props.title !== prevProps.title) {
+      this.resetPhotos();
+    }
+  }
+
+  resetPhotos() {
+    this.setState({ currentPhotoNumber: 1 });
   }
 
   shiftPhotos(direction) {
+    const { albumPhotos } = this.props;
     const { currentPhotoNumber } = this.state;
     let newIndex = currentPhotoNumber;
 
     if (direction === "forward") {
-      newIndex = currentPhotoNumber + 1;
+      if (newIndex === albumPhotos.length + 1) {
+        newIndex = 1;
+      } else {
+        newIndex = currentPhotoNumber + 1;
+      }
     } else {
-      newIndex = currentPhotoNumber - 1;
+      if (newIndex === 0) {
+        newIndex = albumPhotos.length;
+      } else {
+        newIndex = currentPhotoNumber - 1;
+      }
     }
+    console.log(newIndex, "index");
 
     this.setState({
       currentPhotoNumber: newIndex
@@ -35,18 +53,14 @@ class PhotoViewer extends React.Component {
     return (
       <div className={css.buttons}>
         <button
-          className={css.buttons__previous}
+          className={css.buttons__button}
           onClick={() => this.shiftPhotos("backward")}
-          disabled={albumPhotos.indexOf(currentPhotoNumber) === 0}
         >
           Previous
         </button>
         <button
-          className={css.buttons__next}
+          className={css.buttons__button}
           onClick={() => this.shiftPhotos("forward")}
-          disabled={
-            albumPhotos.indexOf(currentPhotoNumber) === albumPhotos.length - 1
-          }
         >
           Next
         </button>
