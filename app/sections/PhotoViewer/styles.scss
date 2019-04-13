@@ -9,6 +9,15 @@
   background-color: $background-tertiary;
 }
 
+.cards_slider_wrapper {
+  display: flex;
+
+  .card {
+    flex: 1;
+    min-width: 600px;
+  }
+}
+
 .cards_slider {
   position: relative;
   max-width: 600px;
