@@ -40,17 +40,19 @@ class AlbumsList extends React.Component {
           {albums.length !== 0 && (
             <React.Fragment>
               <Title title={"Albums"} />
-              {albums.map(album => {
-                return (
-                  <span
-                    key={album.id}
-                    className={css.album}
-                    onClick={() => this.selectAlbum(album.id, album.title)}
-                  >
-                    <p className={css.album__name}>{album.title}</p>
-                  </span>
-                );
-              })}
+              <div className={css.album_cards}>
+                {albums.map(album => {
+                  return (
+                    <span
+                      key={album.id}
+                      className={css.album}
+                      onClick={() => this.selectAlbum(album.id, album.title)}
+                    >
+                      <p className={css.album__name}>{album.title}</p>
+                    </span>
+                  );
+                })}
+              </div>
             </React.Fragment>
           )}
         </div>

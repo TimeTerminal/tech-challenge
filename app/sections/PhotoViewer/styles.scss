@@ -26,11 +26,14 @@
   background-color: $theme-tertiary;
   box-shadow: 0px 2px 1px $background-secondary;
   font-size: 16px;
-  transition: 0.15s background ease-inb;
+  transition: 0.3s all ease;
+  border: 1px solid $theme-secondary;
+  border-radius: 4px;
+  cursor: pointer;
 
   &:hover {
     background-color: $theme-secondary;
-    color: #333;
+    color: $text-secondary;
   }
 }
 

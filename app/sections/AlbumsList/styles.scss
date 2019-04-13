@@ -1,6 +1,11 @@
 @import "app/variables";
 
-.section__title,
+.album_cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .album__name {
   color: $text-primary;
   margin: 0;
@@ -20,8 +25,8 @@
   &:hover {
     background-color: $theme-secondary;
 
-    h4 {
-      color: #5c5a61;
+    p {
+      color: $text-secondary;
     }
   }
 
