@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+dist
+
+# Windows Ignores
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini

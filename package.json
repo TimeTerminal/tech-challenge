@@ -1,0 +1,24 @@
+{
+  "name": "album-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimeTerminal/tech-challenge.git"
+  },
+  "keywords": [],
+  "author": "Time_Terminal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimeTerminal/tech-challenge/issues"
+  },
+  "homepage": "https://github.com/TimeTerminal/tech-challenge#readme",
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
