@@ -6,8 +6,6 @@ import css from "./styles.scss";
 class Card extends React.PureComponent {
   render() {
     const { imageSource, imageTitle } = this.props;
-    // console.log(imageSource, imageTitle, "albumPhotos in Card");
-
     return (
       <div className={css.card}>
         <img src={imageSource} className={css.card__background} />
@@ -16,4 +14,10 @@ class Card extends React.PureComponent {
     );
   }
 }
+
+Card.propTypes = {
+  imageSource: PropTypes.string,
+  imageTitle: PropTypes.string
+};
+
 export default Card;

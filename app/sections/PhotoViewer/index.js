@@ -33,4 +33,10 @@ class PhotoViewer extends React.Component {
     );
   }
 }
+
+PhotoViewer.propTypes = {
+  title: PropTypes.string,
+  albumPhotos: PropTypes.array
+};
+
 export default PhotoViewer;

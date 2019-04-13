@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { fetchUserData, fetchAlbums } from "../../backend/controllers";
 
 import css from "./styles.scss";

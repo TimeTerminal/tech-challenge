@@ -59,4 +59,9 @@ class AlbumsList extends React.Component {
     );
   }
 }
+
+AlbumsList.propTypes = {
+  albums: PropTypes.array
+};
+
 export default AlbumsList;
