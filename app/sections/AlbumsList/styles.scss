@@ -3,6 +3,7 @@
 .section__title,
 .album__name {
   color: $text-primary;
+  margin: 0;
 }
 
 .albums_list {
@@ -10,7 +11,7 @@
 
 .album {
   display: inline-block;
-  margin: 10px 10px 10px 5px;
+  margin: 5px;
   padding: 10px;
   border: 1px solid $theme-secondary;
   border-radius: 4px;

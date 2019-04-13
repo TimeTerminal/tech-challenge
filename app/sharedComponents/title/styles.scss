@@ -1,0 +1,8 @@
+@import "app/variables";
+
+.section__title {
+  display: flex;
+  justify-content: center;
+  color: $text-primary;
+  text-transform: uppercase;
+}

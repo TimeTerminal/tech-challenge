@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { fetchPhotos } from "../../backend/controllers";
 
 import css from "./styles.scss";
+import Title from "../../sharedComponents/title";
 import PhotoViewer from "../PhotoViewer";
 
 class AlbumsList extends React.Component {
@@ -18,11 +19,12 @@ class AlbumsList extends React.Component {
     this.selectAlbum = this.selectAlbum.bind(this);
   }
 
-  async selectAlbum(albumId) {
+  async selectAlbum(albumId, title) {
     const photos = await fetchPhotos(albumId);
 
     this.setState({
       selectedAlbum: {
+        title,
         albumPhotos: photos
       }
     });
@@ -35,21 +37,21 @@ class AlbumsList extends React.Component {
     return (
       <React.Fragment>
         <div className={css.albums_list}>
-          <h2 className={css.section__title}>Albums</h2>
+          <Title title={"Albums"} />
           {albums.length !== 0 &&
             albums.map(album => {
               return (
                 <span
                   key={album.id}
                   className={css.album}
-                  onClick={() => this.selectAlbum(album.id)}
+                  onClick={() => this.selectAlbum(album.id, album.title)}
                 >
-                  <h4 className={css.album__name}>{album.title}</h4>
+                  <p className={css.album__name}>{album.title}</p>
                 </span>
               );
             })}
         </div>
-        <PhotoViewer albumPhotos={albumPhotos} />
+        <PhotoViewer title={title} albumPhotos={albumPhotos} />
       </React.Fragment>
     );
   }
