@@ -5,7 +5,11 @@ import css from "./styles.scss";
 
 class App extends React.Component {
   render() {
-    return <div>Album Viewer</div>;
+    return (
+      <div>
+        <h1>Album Viewer</h1>
+      </div>
+    );
   }
 }
 
