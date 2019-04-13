@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import css from "./styles.scss";
-import Body from "./sections/body";
+import Body from "./sections/Body";
 
 class App extends React.Component {
   render() {
