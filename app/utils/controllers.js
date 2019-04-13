@@ -1,4 +1,4 @@
-const { fetchAllUsers, fetchUsersAlbums, fetchAlbumPhotos } = require("./api");
+const { fetchAllUsers, fetchUsersAlbums, fetchAlbumPhotos } = require("./db");
 
 const pathRoot = "https://jsonplaceholder.typicode.com";
 
