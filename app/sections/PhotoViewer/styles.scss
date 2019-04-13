@@ -9,29 +9,20 @@
   background-color: $background-tertiary;
 }
 
-.cards_slider_wrapper {
+.buttons {
   display: flex;
-
-  .card {
-    flex: 1;
-    min-width: 600px;
-  }
 }
 
-.cards_slider {
-  position: relative;
-  max-width: 600px;
-  max-height: 600px;
-  margin: 0 auto;
+.carousel {
+  width: 60%;
+  margin: auto;
+  border: 5px solid black;
+  // overflow: hidden;
+}
 
-  &:after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 600px;
-    outline: 5px solid #61dafe;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+.carousel__slider {
+  display: flex;
+  width: 600px;
+  height: 600px;
+  transition: transform 0.4s ease-in-out;
 }
