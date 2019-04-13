@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { fetchPhotos } from "../../backend/controllers";
 
 import css from "./styles.scss";
+import PhotoViewer from "../PhotoViewer";
 
 class AlbumsList extends React.Component {
   constructor() {
@@ -20,21 +21,17 @@ class AlbumsList extends React.Component {
   async selectAlbum(albumId) {
     const photos = await fetchPhotos(albumId);
 
-    console.log(photos, "photos");
-
-    // this.setState({
-    //     albumData: {
-    //       albums
-    //     }
-    //   });
+    this.setState({
+      selectedAlbum: {
+        albumPhotos: photos
+      }
+    });
   }
 
   render() {
     const { albums } = this.props;
     const { title, albumPhotos } = this.state.selectedAlbum;
-    // console.log(photos, "albumData in AlbumsList");
 
-    // const selectedPhotos = photos.filter(photo => photo.)
     return (
       <React.Fragment>
         <div className={css.albums_list}>
@@ -47,22 +44,12 @@ class AlbumsList extends React.Component {
                   className={css.album}
                   onClick={() => this.selectAlbum(album.id)}
                 >
-                  <h4 className={css.album__title}>{album.title}</h4>
+                  <h4 className={css.album__name}>{album.title}</h4>
                 </span>
               );
             })}
         </div>
-        <div className={css.photos_list}>
-          <h2 className={css.section__title}>Photos</h2>
-          {/* {title !== null &&
-            photos.map(photo => {
-              return (
-                <span key={photo.id} className={css.photo}>
-                  <h4 className={css.photo__title}>{album.title}</h4>
-                </span>
-              );
-            })} */}
-        </div>
+        <PhotoViewer albumPhotos={albumPhotos} />
       </React.Fragment>
     );
   }

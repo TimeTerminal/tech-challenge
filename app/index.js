@@ -7,7 +7,7 @@ import Body from "./sections/Body";
 class App extends React.Component {
   render() {
     return (
-      <div className={css.titleContainer}>
+      <div className={css.main_template}>
         <h1 className={css.title}>Album Viewer</h1>
         <Body />
       </div>
