@@ -1,12 +1,6 @@
 {
   "name": "album-viewer",
   "version": "1.0.0",
-  "babel": {
-    "presets": [
-      "@babel/preset-env",
-      "@babel/preset-react"
-    ]
-  },
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --port 3000 --watch"
@@ -18,10 +12,6 @@
   "keywords": [],
   "author": "Time_Terminal",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TimeTerminal/tech-challenge/issues"
-  },
-  "homepage": "https://github.com/TimeTerminal/tech-challenge#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "prop-types": "^15.7.2",
@@ -30,9 +20,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "@babel/polyfill": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.5",
     "css-loader": "^2.1.1",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.11.0",
