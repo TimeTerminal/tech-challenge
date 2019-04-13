@@ -2,22 +2,25 @@ const { fetchAllUsers, fetchUsersAlbums, fetchAlbumPhotos } = require("./db");
 
 const pathRoot = "https://jsonplaceholder.typicode.com";
 
-async function fetchUserData() {
+export async function fetchUserData() {
   const userData = await fetchAllUsers(`${pathRoot}/users`);
   return userData;
 }
 
-async function fetchAlbumsWithPhotos(userId) {
+export async function fetchAlbums(userId) {
   try {
     const albums = await fetchUsersAlbums(`${pathRoot}/albums`, userId);
-    const allData = await fetchAlbumPhotos(`${pathRoot}/photos`, albums);
-    return [albums, allData];
+    return albums;
   } catch (error) {
     console.error(error);
   }
 }
 
-module.exports = {
-  fetchUserData,
-  fetchAlbumsWithPhotos
-};
+export async function fetchPhotos(albumId) {
+  try {
+    const photos = await fetchAlbumPhotos(`${pathRoot}/photos`, albumId);
+    return photos;
+  } catch (error) {
+    console.error(error);
+  }
+}

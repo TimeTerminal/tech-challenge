@@ -27,26 +27,19 @@ export async function fetchUsersAlbums(path, userId) {
   return albums;
 }
 
-export async function fetchAlbumPhotos(path, albums) {
-  try {
-    const fullAlbumData = Promise.all(
-      albums.map(albumsInfo => {
-        return axios
-          .get(path, {
-            params: {
-              albumId: albumsInfo.id
-            }
-          })
-          .catch(e => {
-            console.log(error);
-          });
-      })
-    ).then(albumImages => {
-      return albumImages.map(albumImage => albumImage.data);
+export async function fetchAlbumPhotos(path, albumId) {
+  const photos = axios
+    .get(path, {
+      params: {
+        albumId
+      }
+    })
+    .catch(e => {
+      console.log(error);
+    })
+    .then(response => {
+      return response.data;
     });
 
-    return fullAlbumData;
-  } catch (error) {
-    console.error(error);
-  }
+  return photos;
 }

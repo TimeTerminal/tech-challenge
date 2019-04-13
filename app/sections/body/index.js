@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {
-  fetchUserData,
-  fetchAlbumsWithPhotos
-} from "../../backend/controllers";
+import { fetchUserData, fetchAlbums } from "../../backend/controllers";
 
 import css from "./styles.scss";
 import AlbumsList from "../albumsList";
@@ -13,11 +10,7 @@ class Body extends React.Component {
     super();
     this.state = {
       users: [],
-      selectedUser: null,
-      albumData: {
-        albums: [],
-        photos: []
-      }
+      albums: []
     };
 
     this.fetchAlbumData = this.fetchAlbumData.bind(this);
@@ -47,18 +40,12 @@ class Body extends React.Component {
   }
 
   async fetchAlbumData(userId) {
-    const albumData = await fetchAlbumsWithPhotos(userId);
-    this.setState({
-      albumData: {
-        albums: albumData[0],
-        photos: albumData[1]
-      }
-    });
+    const albums = await fetchAlbums(userId);
+    this.setState({ albums });
   }
 
   render() {
-    const { albumData } = this.state;
-    console.log(albumData, "albumData in Body");
+    const { albums } = this.state;
     return (
       <React.Fragment>
         <h1 className={css.title}>Body</h1>
@@ -69,7 +56,7 @@ class Body extends React.Component {
             {this.displayUsers()}
           </select>
         </div>
-        <AlbumsList albumData={albumData} />
+        <AlbumsList albums={albums} />
       </React.Fragment>
     );
   }
