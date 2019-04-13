@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { fetchAllUsers, fetchAlbumsWithArt } from "../../utils/api";
+import { fetchUserData, fetchAlbumsWithPhotos } from "../../utils/controllers";
 
 import css from "./styles.scss";
 import AlbumsList from "../albumsList";
@@ -11,14 +11,17 @@ class Body extends React.Component {
     this.state = {
       users: [],
       selectedUser: null,
-      albumData: []
+      albumData: {
+        albums: [],
+        photos: []
+      }
     };
 
     this.fetchAlbumData = this.fetchAlbumData.bind(this);
   }
 
   componentDidMount() {
-    fetchAllUsers().then(response => {
+    fetchUserData().then(response => {
       this.setState({
         users: response
       });
@@ -41,9 +44,12 @@ class Body extends React.Component {
   }
 
   async fetchAlbumData(userId) {
-    const albumData = await fetchAlbumsWithArt(userId);
+    const albumData = await fetchAlbumsWithPhotos(userId);
     this.setState({
-      albumData
+      albumData: {
+        albums: albumData[0],
+        photos: albumData[1]
+      }
     });
   }
 
