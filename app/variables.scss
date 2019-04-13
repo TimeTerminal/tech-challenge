@@ -1,16 +1,20 @@
 // ====================
 // === Site Colours ===
 // ====================
-$background-primary: #b4a1a1;
-$background-secondary: #6b5e62;
+$background-primary: #355e7e;
+$background-secondary: #6b5c7b;
+$background-tertiary: #c06c84;
 $text-primary: #f1f1f1;
-$theme-primary: #a6b094;
+$theme-primary: #c06c84;
 $theme-secondary: #fe9a8b;
+$theme-tertiary: #fe9a8b;
 
 :export {
   background-primary: $background-primary;
   background-secondary: $background-secondary;
+  background-tertiary: $background-tertiary;
   text-primary: $text-primary;
   theme-primary: $theme-primary;
   theme-secondary: $theme-secondary;
+  theme-tertiary: $theme-tertiary;
 }

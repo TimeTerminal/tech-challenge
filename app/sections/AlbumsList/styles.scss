@@ -1,11 +1,28 @@
 @import "app/variables";
 
-.albums_container {
-  width: 100px;
-  height: 100px;
-  background: red;
-}
-
+.section__title,
 .album__title {
   color: $text-primary;
+}
+
+.albums_list {
+}
+
+.album {
+  display: inline-block;
+  margin: 10px 10px 10px 5px;
+  padding: 10px;
+  border: 1px solid $theme-secondary;
+  border-radius: 4px;
+  box-shadow: 3px 3px 10px rgba(40, 40, 40, 0.3);
+  cursor: pointer;
+  background-color: $theme-primary;
+
+  &:hover {
+    background-color: $theme-secondary;
+  }
+
+  h4 {
+    margin: 0;
+  }
 }
