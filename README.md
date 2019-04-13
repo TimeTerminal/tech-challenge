@@ -1,3 +1,7 @@
+# About
+
+Album Viewer
+
 # Start
 
 ## 1.0 Install Node Modules

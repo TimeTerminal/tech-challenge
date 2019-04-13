@@ -1,0 +1,16 @@
+// ====================
+// === Site Colours ===
+// ====================
+$background-primary: #b4a1a1;
+$background-secondary: #6b5e62;
+$text-primary: #f1f1f1;
+$theme-primary: #a6b094;
+$theme-secondary: #fe9a8b;
+
+:export {
+  background-primary: $background-primary;
+  background-secondary: $background-secondary;
+  text-primary: $text-primary;
+  theme-primary: $theme-primary;
+  theme-secondary: $theme-secondary;
+}

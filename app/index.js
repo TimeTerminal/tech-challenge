@@ -6,8 +6,8 @@ import css from "./styles.scss";
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Album Viewer</h1>
+      <div className={css.titleContainer}>
+        <h1 className={css.title}>Album Viewer</h1>
       </div>
     );
   }

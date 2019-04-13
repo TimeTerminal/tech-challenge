@@ -1,3 +1,18 @@
+@import "./variables";
+
 body {
-  background: red;
+  background-color: $background-primary;
+  font-family: "Roboto", sans-serif;
+}
+
+.titleContainer {
+  background-color: $background-secondary;
+  border-radius: 2px;
+}
+
+.title {
+  color: $text-primary;
+  text-align: center;
+  font-weight: 100;
+  margin: 0;
 }
