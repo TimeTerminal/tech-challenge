@@ -1,0 +1,15 @@
+@import "app/variables";
+
+.photos_container {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 50%;
+  background-color: $background-tertiary;
+  display: flex;
+  justify-content: center;
+}
+
+.section__title {
+  color: $text-primary;
+}

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { fetchUserData, fetchAlbums } from "../../backend/controllers";
 
 import css from "./styles.scss";
-import AlbumsList from "../albumsList";
+import AlbumsList from "../AlbumsList";
 
 class Body extends React.Component {
   constructor() {
@@ -48,7 +48,6 @@ class Body extends React.Component {
     const { albums } = this.state;
     return (
       <React.Fragment>
-        <h1 className={css.title}>Body</h1>
         <div className={css.users_dropdown}>
           <label>Users:</label>
           <select onChange={e => this.fetchAlbumData(e.target.value)}>
