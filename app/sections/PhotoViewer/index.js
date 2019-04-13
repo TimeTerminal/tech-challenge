@@ -42,7 +42,6 @@ class PhotoViewer extends React.Component {
         newIndex = currentPhotoNumber - 1;
       }
     }
-    console.log(newIndex, "index");
 
     this.setState({
       currentPhotoNumber: newIndex

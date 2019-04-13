@@ -2,6 +2,7 @@ import React from "react";
 import { fetchUserData, fetchAlbums } from "../../backend/controllers";
 
 import css from "./styles.scss";
+import Title from "../../sharedComponents/title";
 import AlbumsList from "../AlbumsList";
 
 class Body extends React.Component {
@@ -47,9 +48,12 @@ class Body extends React.Component {
     const { albums } = this.state;
     return (
       <React.Fragment>
-        <div className={css.users_dropdown}>
-          <label>Users:</label>
-          <select onChange={e => this.fetchAlbumData(e.target.value)}>
+        <div className={css.users}>
+          <Title title={"Users"} />
+          <select
+            onChange={e => this.fetchAlbumData(e.target.value)}
+            className={css.users__dropdown}
+          >
             <option>Select User</option>
             {this.displayUsers()}
           </select>
