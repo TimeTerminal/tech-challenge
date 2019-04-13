@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-function fetchAllUsers(path) {
+export function fetchAllUsers(path) {
   return axios
     .get(path)
     .then(response => {
@@ -11,7 +11,7 @@ function fetchAllUsers(path) {
     });
 }
 
-async function fetchUsersAlbums(path, userId) {
+export async function fetchUsersAlbums(path, userId) {
   const albums = await axios
     .get(path, {
       params: {
@@ -27,7 +27,7 @@ async function fetchUsersAlbums(path, userId) {
   return albums;
 }
 
-async function fetchAlbumPhotos(path, albums) {
+export async function fetchAlbumPhotos(path, albums) {
   try {
     const fullAlbumData = Promise.all(
       albums.map(albumsInfo => {
@@ -50,9 +50,3 @@ async function fetchAlbumPhotos(path, albums) {
     console.error(error);
   }
 }
-
-module.exports = {
-  fetchAllUsers,
-  fetchUsersAlbums,
-  fetchAlbumPhotos
-};

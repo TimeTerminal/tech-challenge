@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { fetchUserData, fetchAlbumsWithPhotos } from "../../utils/controllers";
+import {
+  fetchUserData,
+  fetchAlbumsWithPhotos
+} from "../../backend/controllers";
 
 import css from "./styles.scss";
 import AlbumsList from "../albumsList";
@@ -55,7 +58,7 @@ class Body extends React.Component {
 
   render() {
     const { albumData } = this.state;
-    // console.log(albumData, "albumData in Body");
+    console.log(albumData, "albumData in Body");
     return (
       <React.Fragment>
         <h1 className={css.title}>Body</h1>
